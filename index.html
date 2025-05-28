@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>量化金融作品集 | 優勢資本實習申請</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .cta-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .section {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background: linear-gradient(180deg, #667eea, #764ba2);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1.5px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background: #667eea;
+            border: 3px solid white;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background: white;
+            position: relative;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .timeline-date {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            text-align: center;
+        }
+
+        .skill-tree {
+            position: relative;
+            min-height: 200px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .skill-node {
+            position: relative;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.8rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 3px solid transparent;
+            animation: skillGlow 3s ease-in-out infinite alternate;
+        }
+
+        .skill-node:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .skill-node.mastery {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .skill-node.learning {
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3);
+        }
+
+        .skill-node.expert {
+            background: linear-gradient(135deg, #feca57, #ff9ff3);
+            box-shadow: 0 4px 15px rgba(254, 202, 87, 0.3);
+        }
+
+        @keyframes skillGlow {
+            0% { box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3); }
+            100% { box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5); }
+        }
+
+        .skill-legend {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: flex;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .timeline::after {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 50px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 10px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0%;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(102, 126, 234, 0.2) 0%, rgba(102, 126, 234, 0.2) 100%);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            max-width: 900px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .project-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .project-link:hover {
+            border-bottom-color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">📊 量化金融作品集</div>
+            <ul class="nav-links">
+                <li><a href="#home">首頁</a></li>
+                <li><a href="#journey">心路歷程</a></li>
+                <li><a href="#skills">技能展示</a></li>
+                <li><a href="#contact">聯絡方式</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>量化金融 × 程式開發</h1>
+                <p>從統計分析到Alpha挖掘，展現解決問題的能力與自學精神</p>
+                <a href="#journey" class="cta-button">探索我的作品 →</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="journey" class="section">
+        <div class="container">
+            <h2 class="section-title">🚀 我的量化金融心路歷程</h2>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">起點：社會學系統計分析</div>
+                        <h3>量化思維的啟蒙</h3>
+                        <p><strong>🎯 目標：</strong>分析1000份問卷數據，尋找社會現象背後的規律</p>
+                        <p><strong>🔧 解決方案：</strong>透過SPSS進行多元統計分析，建立迴歸模型驗證假設</p>
+                        <p><strong>💡 收穫：</strong>首次體驗數據挖掘的魅力，奠定量化思維基礎</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">進階：雙主修財務工程</div>
+                        <h3>理論與實務的初次碰撞</h3>
+                        <p><strong>❓ 挑戰：</strong>課本理論如何應用到真實市場？如何驗證CAPM模型？</p>
+                        <p><strong>🔧 解決方案：</strong>學習資料庫操作，抓取鴻海股價數據，手動計算Beta係數</p>
+                        <p><strong>💡 突破：</strong>完成人生第一個金融實證分析，理解理論與現實的差距</p>
+                        <div style="margin-top: 1rem; padding: 0.8rem; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1)); border-radius: 8px; border-left: 4px solid #667eea;">
+                            <strong>📊 作品成果：</strong>
+                            <span class="project-link" onclick="showModal('capm')">點擊查看鴻海CAPM分析結果 →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">深入：選擇權定價探索</div>
+                        <h3>從黑盒子到透明化</h3>
+                        <p><strong>❓ 困惑：</strong>隱含波動率如何影響選擇權價格？理論價格與市場價格為何有差異？</p>
+                        <p><strong>🔧 方法：</strong>用Excel VBA實作Black-Scholes模型，繪製波動率微笑曲線</p>
+                        <p><strong>💡 發現：</strong>市場情緒和流動性是影響價差的關鍵因素</p>
+                        <div style="margin-top: 1rem; padding: 0.8rem; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1)); border-radius: 8px; border-left: 4px solid #667eea;">
+                            <strong>📊 作品成果：</strong>
+                            <span class="project-link" onclick="showModal('options')">點擊查看隱含波動率分析 →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">挫折：Excel策略回測失敗</div>
+                        <h3>第一次重大挫折與反思</h3>
+                        <p><strong>❓ 問題：</strong>簡單的均值回歸和動能策略績效慘不忍睹，甚至跑不贏買入持有</p>
+                        <p><strong>🤔 反思：</strong>是策略本身有問題？還是我對市場的理解太淺薄？</p>
+                        <p><strong>🔧 應對：</strong>大量閱讀量化交易書籍，學習計量經濟學，意識到需要更系統性的方法</p>
+                        <p><strong>💡 領悟：</strong>量化交易不是技術指標的簡單組合，而是需要統計基礎和邏輯驗證</p>
+                        <div style="margin-top: 1rem; padding: 0.8rem; background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(238, 90, 82, 0.1)); border-radius: 8px; border-left: 4px solid #ff6b6b;">
+                            <strong>📊 失敗案例：</strong>
+                            <span class="project-link" onclick="showModal('failed_strategy')">點擊查看早期策略回測結果 →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">轉機：統計套利策略突破</div>
+                        <h3>找到適合的研究方向</h3>
+                        <p><strong>💡 洞察：</strong>統計套利核心邏輯清晰 - 利用價格錯置，適用於多種資產</p>
+                        <p><strong>❓ 技術難題：</strong>如何獲取歷史數據？如何用程式實現協整檢驗？</p>
+                        <p><strong>🔧 解決路徑：</strong>透過AI學習API使用，從幣安抓取5年加密貨幣數據，自學Python編程</p>
+                        <p><strong>🎯 成果：</strong>BNB-DOGE對策略年化報酬53%，夏普比率2.42，最大回撤僅0.05%</p>
+                        <div style="margin-top: 1rem; padding: 0.8rem; background: linear-gradient(135deg, rgba(78, 205, 196, 0.1), rgba(68, 160, 141, 0.1)); border-radius: 8px; border-left: 4px solid #4ecdc4;">
+                            <strong>📊 重大突破：</strong>
+                            <span class="project-link" onclick="showModal('pairs')">點擊查看統計套利完整報告 →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">新挑戰：WorldQuant Alpha門檻</div>
+                        <h3>面對最嚴苛的量化標準</h3>
+                        <p><strong>❓ 核心問題：</strong>手動嘗試幾小時都無法產出合格Alpha，效率極低</p>
+                        <p><strong>🤔 分析：</strong>參數空間巨大，人工搜索如大海撈針，需要系統性方法</p>
+                        <p><strong>🔧 創新解法：</strong>設計自動化排列組合程式，將重複性工作交給電腦</p>
+                        <p><strong>💡 突破：</strong>第一次成功產出可提交的Alpha，驗證自動化搜索的可行性</p>
+                        <div style="margin-top: 1rem; padding: 0.8rem; background: linear-gradient(135deg, rgba(254, 202, 87, 0.1), rgba(255, 159, 243, 0.1)); border-radius: 8px; border-left: 4px solid #feca57;">
+                            <strong>📊 程式碼展示：</strong>
+                            <span class="project-link" onclick="showModal('alpha_code')">點擊查看Alpha自動搜索程式 →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">優化：相關性過高問題</div>
+                        <h3>從成功到新的瓶頸</h3>
+                        <p><strong>❓ 新問題：</strong>大量產出的Alpha相關性過高，無法重複提交</p>
+                        <p><strong>🤔 深層思考：</strong>如何在保持搜索隨機性的同時，避免重複模式？</p>
+                        <p><strong>🔧 策略調整：</strong>設計貪婪搜索演算法 - 隨機探索→找到好方向→深入鑽研→重新隨機</p>
+                        <p><strong>⚠️ 新發現：</strong>會在局部最優解耗費過多時間，需要進一步優化</p>
+                        <div style="margin-top: 1rem; padding: 0.8rem; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1)); border-radius: 8px; border-left: 4px solid #667eea;">
+                            <strong>📊 演算法展示：</strong>
+                            <span class="project-link" onclick="showModal('greedy_algorithm')">點擊查看貪婪搜索演算法 →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">創新："老鼠屎清理"機制</div>
+                        <h3>原創性解決方案的誕生</h3>
+                        <p><strong>💡 核心洞察：</strong>某些參數組合天生就是失敗的"老鼠屎"，應該被識別並排除</p>
+                        <p><strong>🔧 技術實現：</strong>記錄每個參數的成功率，自動移除高失敗率組合</p>
+                        <p><strong>📊 邏輯架構：</strong>隨機搜索→統計記錄→智能過濾→漸進優化→空間淨化</p>
+                        <p><strong>🎯 預期效果：</strong>搜索空間逐漸收斂到高成功率區域，大幅提升效率</p>
+                        <div style="margin-top: 1rem; padding: 0.8rem; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1)); border-radius: 8px; border-left: 4px solid #667eea;">
+                            <strong>📊 創新系統：</strong>
+                            <span class="project-link" onclick="showModal('rat_cleaning')">點擊查看老鼠屎清理系統 →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">終極挑戰：雲端自動化部署</div>
+                        <h3>從本地限制到無限可能</h3>
+                        <p><strong>❓ 實際困難：</strong>學生生活限制 - 電腦需要經常移動，網路不穩定</p>
+                        <p><strong>🎯 解決目標：</strong>實現24/7全自動Alpha挖掘，不受硬體環境限制</p>
+                        <p><strong>⚡ 技術挑戰：</strong>2000行代碼遷移、雲端環境適配、大量bug修復</p>
+                        <p><strong>🔧 解決過程：</strong>申請GCP試用→環境配置→代碼重構→連續數天debug</p>
+                        <p><strong>🏆 最終成果：</strong>成功實現雲端24小時自動運行，直到觸發API保護機制</p>
+                        <p><strong>📈 當前狀態：</strong>正在優化請求頻率控制，平衡效率與穩定性</p>
+                        <div style="margin-top: 1rem; padding: 0.8rem; background: linear-gradient(135deg, rgba(78, 205, 196, 0.1), rgba(68, 160, 141, 0.1)); border-radius: 8px; border-left: 4px solid #4ecdc4;">
+                            <strong>📊 雲端系統：</strong>
+                            <span class="project-link" onclick="showModal('cloud_system')">點擊查看雲端部署架構 →</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">🛠️ 技能樹展示</h2>
+            <div class="skills-container">
+                <div class="skill-category fade-in">
+                    <h3>💻 程式開發技能樹</h3>
+                    <div class="skill-tree">
+                        <div class="skill-node mastery">Python 核心開發</div>
+                        <div class="skill-node mastery">Excel VBA 精通</div>
+                        <div class="skill-node expert">API 整合應用</div>
+                        <div class="skill-node learning">雲端部署 (GCP)</div>
+                        <div class="skill-node expert">數據庫操作</div>
+                        <div class="skill-node expert">版本控制 (Git)</div>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>📊 量化金融技能樹</h3>
+                    <div class="skill-tree">
+                        <div class="skill-node mastery">統計套利策略</div>
+                        <div class="skill-node mastery">風險管理</div>
+                        <div class="skill-node expert">衍生性商品定價</div>
+                        <div class="skill-node expert">Alpha 研究開發</div>
+                        <div class="skill-node expert">回測系統設計</div>
+                        <div class="skill-node learning">高頻交易策略</div>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>🔬 數據科學技能樹</h3>
+                    <div class="skill-tree">
+                        <div class="skill-node mastery">統計建模分析</div>
+                        <div class="skill-node mastery">時間序列分析</div>
+                        <div class="skill-node expert">機器學習應用</div>
+                        <div class="skill-node expert">數據視覺化</div>
+                        <div class="skill-node expert">協整檢驗</div>
+                        <div class="skill-node learning">深度學習探索</div>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>🤖 AI 協作技能樹</h3>
+                    <div class="skill-tree">
+                        <div class="skill-node mastery">AI 輔助學習</div>
+                        <div class="skill-node expert">代碼生成優化</div>
+                        <div class="skill-node expert">技術問題解決</div>
+                        <div class="skill-node expert">演算法設計討論</div>
+                        <div class="skill-node learning">AI 模型微調</div>
+                        <div class="skill-node learning">提示工程技巧</div>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>🎯 核心軟實力</h3>
+                    <div class="skill-tree">
+                        <div class="skill-node mastery">問題分析解決</div>
+                        <div class="skill-node mastery">自主學習能力</div>
+                        <div class="skill-node mastery">創新思維模式</div>
+                        <div class="skill-node mastery">執行力</div>
+                        <div class="skill-node expert">邏輯推理能力</div>
+                        <div class="skill-node expert">壓力管理</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skill-legend">
+                <div class="legend-item">
+                    <div class="legend-color" style="background: linear-gradient(135deg, #ff6b6b, #ee5a52);"></div>
+                    <span>精通掌握</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: linear-gradient(135deg, #feca57, #ff9ff3);"></div>
+                    <span>熟練應用</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: linear-gradient(135deg, #4ecdc4, #44a08d);"></div>
+                    <span>持續學習</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">📞 聯絡方式</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">期待與優勢資本團隊深入交流量化交易的無限可能</p>
+            
+            <div class="contact-info">
+                <div class="contact-item fade-in">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <p>rickymama00@gmail.com</p>
+                </div>
+                
+                <div class="contact-item fade-in">
+                    <div class="contact-icon">📱</div>
+                    <h3>聯絡電話</h3>
+                    <p>0900-772-793</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 3rem; padding: 2rem; background: rgba(255,255,255,0.1); border-radius: 15px; backdrop-filter: blur(10px);">
+                <h3 style="margin-bottom: 1rem;">為什麼選擇我？</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; text-align: left;">
+                    <div>
+                        <h4>🎯 解決問題的能力</h4>
+                        <p>從Excel策略失敗到成功開發雲端Alpha系統，每次挫折都是成長的契機</p>
+                    </div>
+                    <div>
+                        <h4>📚 強大的自學能力</h4>
+                        <p>從零基礎學習Python、API、雲端部署，始終保持學習熱忱</p>
+                    </div>
+                    <div>
+                        <h4>💡 創新思維</h4>
+                        <p>"老鼠屎清理"機制等創新解決方案，展現獨特的思考角度</p>
+                    </div>
+                    <div>
+                        <h4>⚡ 執行力</h4>
+                        <p>從想法到實現，2000行代碼雲端部署，說做就做的行動力</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: #2c3e50; color: white; text-align: center; padding: 2rem;">
+        <div class="container">
+            <p>&copy; 2025 量化金融作品集 | 為優勢資本實習申請精心準備</p>
+            <p style="margin-top: 0.5rem; opacity: 0.8;">「在量化金融的道路上，我不只是在尋找Alpha，更是在創造價值」</p>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Fade in animation on scroll
+        function fadeInOnScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', fadeInOnScroll);
+
+        // Modal functions
+        function showModal(type) {
+            const modal = document.getElementById('modal');
+            const modalBody = document.getElementById('modal-body');
+            
+            let content = '';
+            switch(type) {
+                case 'capm':
+                    content = `
+                        <h3 style="color: #667eea; margin-bottom: 1rem;">📊 鴻海 CAPM 模型分析結果</h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                            <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px;">
+                                <strong>Beta 係數</strong><br>
+                                <span style="font-size: 1.5rem; color: #667eea;">1.23</span>
+                            </div>
+                            <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px;">
+                                <strong>R-squared</strong><br>
+                                <span style="font-size: 1.5rem; color: #667eea;">0.67</span>
+                            </div>
+                            <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px;">
+                                <strong>預期報酬率</strong><br>
+                                <span style="font-size: 1.5rem; color: #667eea;">8.5%</span>
+                            </div>
+                            <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px;">
+                                <strong>系統性風險</strong><br>
+                                <span style="font-size: 1.5rem; color: #667eea;">高於市場</span>
+                            </div>
+                        </div>
+                        <p><strong>分析發現：</strong>鴻海的Beta值為1.23，顯示其股價波動大於市場平均，屬於高風險高報酬股票。R-squared為0.67表示67%的價格變動可由市場因素解釋。</p>
+                    `;
+                    break;
+                case 'options':
+                    content = `
+                        <h3 style="color: #667eea; margin-bottom: 1rem;">📈 隱含波動率曲線分析</h3>
+                        <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <strong>實際市場數據分析結果</strong><br>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                                <div style="background: #667eea; color: white; padding: 1rem; border-radius: 8px; text-align: center;">
+                                    <div style="font-weight: bold; margin-bottom: 0.5rem;">蒙地卡羅模擬結果</div>
+                                    <div style="font-size: 1.3rem;">374.2</div>
+                                </div>
+                                <div style="background: #4ecdc4; color: white; padding: 1rem; border-radius: 8px; text-align: center;">
+                                    <div style="font-weight: bold; margin-bottom: 0.5rem;">Black-Scholes 結果</div>
+                                    <div style="font-size: 1.3rem;">340.2</div>
+                                </div>
+                            </div>
+                            <table style="width: 100%; margin-top: 1rem; font-size: 0.9rem; border-collapse: collapse; border: 1px solid #ddd;">
+                                <tr style="background: #667eea; color: white;">
+                                    <th style="padding: 0.5rem; border: 1px solid #ddd;">當日市場選擇權價格</th>
+                                    <th style="padding: 0.5rem; border: 1px solid #ddd;">開盤價</th>
+                                    <th style="padding: 0.5rem; border: 1px solid #ddd;">最高價</th>
+                                    <th style="padding: 0.5rem; border: 1px solid #ddd;">最低價</th>
+                                    <th style="padding: 0.5rem; border: 1px solid #ddd;">收盤價</th>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd; font-weight: bold;">實際交易數據</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;">259</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;">336</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;">244</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;">333</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div style="background: #e8f4fd; padding: 1rem; border-radius: 8px;">
+                                <strong>模型比較分析</strong><br>
+                                蒙地卡羅模擬價格較Black-Scholes高出34點，顯示市場隱含更高的波動率預期
+                            </div>
+                            <div style="background: #e8f4fd; padding: 1rem; border-radius: 8px;">
+                                <strong>實務應用價值</strong><br>
+                                理論模型與市場實際價格存在明顯差異，驗證了選擇權定價的複雜性
+                            </div>
+                        </div>
+                    `;
+                    break;
+                case 'pairs':
+                    content = `
+                        <h3 style="color: #667eea; margin-bottom: 1rem;">🔄 統計套利策略完整報告</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+                            <div style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 1rem; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 1.8rem; font-weight: bold;">53.28%</div>
+                                <div>年化報酬率</div>
+                            </div>
+                            <div style="background: linear-gradient(135deg, #4ecdc4, #44a08d); color: white; padding: 1rem; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 1.8rem; font-weight: bold;">2.42</div>
+                                <div>夏普比率</div>
+                            </div>
+                            <div style="background: linear-gradient(135deg, #45b7d1, #96c93d); color: white; padding: 1rem; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 1.8rem; font-weight: bold;">0.05%</div>
+                                <div>最大回撤</div>
+                            </div>
+                            <div style="background: linear-gradient(135deg, #f093fb, #f5576c); color: white; padding: 1rem; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 1.8rem; font-weight: bold;">97.6%</div>
+                                <div>勝率</div>
+                            </div>
+                        </div>
+                        <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <h4>🎯 策略優化歷程</h4>
+                            <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                                <li><strong>協整檢驗</strong>：BNB-DOGE 配對通過 ADF 檢驗 (p=0.0055)</li>
+                                <li><strong>OU 模型</strong>：採用 Ornstein-Uhlenbeck 過程建模價差</li>
+                                <li><strong>最適門檻</strong>：使用 Bertram 方法計算進出場點</li>
+                                <li><strong>制度轉換</strong>：根據波動率動態調整交易門檻</li>
+                            </ul>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div style="background: #e8f4fd; padding: 1rem; border-radius: 8px;">
+                                <strong>📊 交易統計</strong><br>
+                                總交易次數：250<br>
+                                平均持倉時間：3.2天<br>
+                                每筆平均報酬：2.57%
+                            </div>
+                            <div style="background: #f0f8e8; padding: 1rem; border-radius: 8px;">
+                                <strong>⚠️ 風險控制</strong><br>
+                                止損設定：-2%<br>
+                                交易成本：0.1%/筆<br>
+                                最大槓桿：2倍
+                            </div>
+                        </div>
+                    `;
+                    break;
+                case 'failed_strategy':
+                    content = `
+                        <h3 style="color: #ff6b6b; margin-bottom: 1rem;">📉 早期策略回測失敗案例</h3>
+                        <div style="background: #fff5f5; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; border: 1px solid #fed7d7;">
+                            <h4 style="color: #c53030; margin-bottom: 0.5rem;">⚠️ 主要問題分析</h4>
+                            <ul style="color: #744210; margin: 0; padding-left: 1.5rem;">
+                                <li>過度依賴技術指標，缺乏統計基礎</li>
+                                <li>忽略交易成本和滑價影響</li>
+                                <li>風險管理機制不完善</li>
+                            </ul>
+                        </div>
+                        <div style="background: #f0f8ff; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <h4 style="color: #2b6cb0; margin-bottom: 0.5rem;">📊 2000/02至今長期績效比較</h4>
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+                            <div style="background: #fed7d7; padding: 1rem; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: bold; color: #c53030;">2.04倍</div>
+                                <div style="color: #744210;">動能策略</div>
+                                <div style="font-size: 0.8rem; color: #666;">年化報酬 3.1%</div>
+                            </div>
+                            <div style="background: #fef5e7; padding: 1rem; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: bold; color: #d69e2e;">7.51倍</div>
+                                <div style="color: #744210;">均值回歸策略</div>
+                                <div style="font-size: 0.8rem; color: #666;">年化報酬 8.4%</div>
+                            </div>
+                            <div style="background: #c6f6d5; padding: 1rem; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: bold; color: #38a169;">23.931倍</div>
+                                <div style="color: #2f855a;">買入持有</div>
+                                <div style="font-size: 0.8rem; color: #2f855a;">年化報酬 13.2%</div>
+                            </div>
+                        </div>
+                        <div style="background: #e8f4fd; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <strong>📈 關鍵數據洞察</strong><br>
+                            25年的長期回測顯示，簡單的買入持有策略遠勝過我早期設計的技術分析策略，這徹底改變了我對市場效率性的認知。
+                        </div>
+                        <p><strong>💡 關鍵學習：</strong>這次慘痛的失敗讓我深刻理解到，戰勝市場需要的不是複雜的技術指標，而是扎實的統計基礎和對市場本質的深度理解。這促使我轉向更系統化的量化研究方法。</p>
+                    `;
+                    break;
+                case 'alpha_code':
+                    content = `
+                        <h3 style="color: #feca57; margin-bottom: 1rem;">🤖 Alpha自動搜索程式</h3>
+                        <div style="background: #2d3748; color: #e2e8f0; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; font-family: 'Courier New', monospace; font-size: 0.9rem; overflow-x: auto;">
+<pre>template = '''
+data1 = ts_backfill(&lt;funds_data&gt;, &lt;backfill_days&gt;);
+data2 = ts_backfill(&lt;debt_data&gt;, &lt;backfill_days&gt;);
+diff = &lt;diff_op&gt;(data1, data2);
+alpha = &lt;ts_neut_op&gt;(diff, &lt;ts_neut_days&gt;);
+alpha_gp = &lt;group_neut_op&gt;(&lt;group_neut_op&gt;(alpha, &lt;gp1&gt;), &lt;gp2&gt;);
+&lt;ts_decay_op&gt;(alpha_gp, &lt;ts_decay_days&gt;)
+'''
+
+# 自動排列組合搜索
+for i in range(1000):
+    expr = template
+    for name, choices in space.items():
+        expr = expr.replace(name, np.random.choice(choices))
+    
+    success, alpha_res = simulate(expr, sess)
+    if success and alpha_res['is']['fitness'] > 1.0:
+        print(f"✅ 發現高質量Alpha: {alpha_res['id']}")
+</pre>
+                        </div>
+                        <div style="background: #f7fafc; padding: 1rem; border-radius: 8px;">
+                            <h4 style="color: #4a5568; margin-bottom: 0.5rem;">🎯 核心創新點</h4>
+                            <ul style="margin: 0; padding-left: 1.5rem; color: #2d3748;">
+                                <li>模板化設計：將複雜的Alpha表達式參數化</li>
+                                <li>自動化測試：用程式取代人工嘗試</li>
+                                <li>即時評估：自動篩選出高質量結果</li>
+                                <li>大規模探索：1000次組合遠超人工能力</li>
+                            </ul>
+                        </div>
+                    `;
+                    break;
+                case 'greedy_algorithm':
+                    content = `
+                        <h3 style="color: #667eea; margin-bottom: 1rem;">🧠 貪婪搜索演算法</h3>
+                        <div style="background: #f0f4f8; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <h4 style="color: #2b6cb0; margin-bottom: 0.5rem;">🔄 演算法流程</h4>
+                            <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                                <div style="background: #667eea; color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;">1. 隨機探索</div>
+                                <span style="color: #667eea;">→</span>
+                                <div style="background: #4c51bf; color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;">2. 評估結果</div>
+                                <span style="color: #667eea;">→</span>
+                                <div style="background: #553c9a; color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;">3. 局部優化</div>
+                                <span style="color: #667eea;">→</span>
+                                <div style="background: #44337a; color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;">4. 重新隨機</div>
+                            </div>
+                        </div>
+                        <div style="background: #2d3748; color: #e2e8f0; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; font-family: 'Courier New', monospace; font-size: 0.9rem;">
+<pre>def greedy_search(depth=0, fixed=None, results=None):
+    if depth >= MAX_DEPTH:
+        return results
+    
+    current_key = sequence[depth]
+    best_options = []
+    
+    # 測試當前參數的所有選項
+    for choice in choices:
+        current_params = {**fixed, current_key: choice}
+        success, res = simulate(expr, sess)
+        
+        if success:
+            fitness = res['is']['fitness']
+            best_options.append((fitness, current_params))
+    
+    # 選取TOP_K進行下一層探索
+    best_options.sort(reverse=True)
+    for option in best_options[:TOP_K]:
+        greedy_search(depth + 1, fixed=option[1], results=results)
+</pre>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div style="background: #d4edda; padding: 1rem; border-radius: 8px;">
+                                <strong style="color: #155724;">✅ 優點</strong><br>
+                                <ul style="margin: 0.5rem 0; padding-left: 1.5rem; color: #155724;">
+                                    <li>能找到局部最優解</li>
+                                    <li>搜索效率較高</li>
+                                    <li>結果相對穩定</li>
+                                </ul>
+                            </div>
+                            <div style="background: #f8d7da; padding: 1rem; border-radius: 8px;">
+                                <strong style="color: #721c24;">⚠️ 問題</strong><br>
+                                <ul style="margin: 0.5rem 0; padding-left: 1.5rem; color: #721c24;">
+                                    <li>容易陷入局部最優</li>
+                                    <li>產生相似的Alpha</li>
+                                    <li>搜索多樣性不足</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                case 'rat_cleaning':
+                    content = `
+                        <h3 style="color: #667eea; margin-bottom: 1rem;">🧹 老鼠屎清理系統</h3>
+                        <div style="background: #f7fafc; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <h4 style="color: #2d3748; margin-bottom: 0.5rem;">💡 核心概念</h4>
+                            <p style="margin: 0; color: #4a5568;">某些參數組合天生就容易失敗，就像一顆老鼠屎壞了一鍋粥。透過統計分析識別這些"老鼠屎"並自動清除，讓搜索空間越來越純淨。</p>
+                        </div>
+                        <div style="background: #2d3748; color: #e2e8f0; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; font-family: 'Courier New', monospace; font-size: 0.9rem;">
+<pre>def optimize_parameter_space(failure_threshold=0.8, min_attempts=50):
+    stats = load_params_stats()
+    blacklist = load_blacklist()
+    
+    for param_name in MAIN_DATA_PARAMS:
+        to_remove = []
+        choices_stats = stats[param_name]
+        
+        for choice, choice_stats in choices_stats.items():
+            attempts = choice_stats["attempts"]
+            failure_rate = choice_stats["failure_rate"]
+            high_quality = choice_stats["high_quality"]
+            
+            # 識別老鼠屎：失敗率高且無高質量輸出
+            if (attempts >= min_attempts and 
+                failure_rate >= failure_threshold and 
+                high_quality == 0):
+                to_remove.append(choice)
+        
+        # 清理老鼠屎
+        for rat_shit in to_remove:
+            space[param_name].remove(rat_shit)
+            blacklist[param_name].append(rat_shit)
+            print(f"🗑️ 清除老鼠屎: {rat_shit}")
+    
+    save_blacklist(blacklist)
+</pre>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                            <div style="background: #fed7d7; padding: 1rem; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 1.5rem; color: #c53030;">💀</div>
+                                <div style="font-weight: bold; color: #c53030;">老鼠屎參數</div>
+                                <div style="font-size: 0.9rem; color: #744210;">失敗率 > 80%</div>
+                            </div>
+                            <div style="background: #fef5e7; padding: 1rem; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 1.5rem; color: #d69e2e;">⚠️</div>
+                                <div style="font-weight: bold; color: #d69e2e;">可疑參數</div>
+                                <div style="font-size: 0.9rem; color: #744210;">失敗率 60-80%</div>
+                            </div>
+                            <div style="background: #c6f6d5; padding: 1rem; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 1.5rem; color: #38a169;">✅</div>
+                                <div style="font-weight: bold; color: #38a169;">優質參數</div>
+                                <div style="font-size: 0.9rem; color: #2f855a;">失敗率 < 60%</div>
+                            </div>
+                        </div>
+                        <div style="background: #e8f4fd; padding: 1rem; border-radius: 8px;">
+                            <strong>🎯 預期效果</strong><br>
+                            隨著統計樣本增大，搜索空間逐漸收斂到高成功率區域，顯著提升Alpha發現效率
+                        </div>
+                    `;
+                    break;
+                case 'cloud_system':
+                    content = `
+                        <h3 style="color: #4ecdc4; margin-bottom: 1rem;">☁️ 雲端部署架構</h3>
+                        <div style="background: #f0f8ff; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <h4 style="color: #2b6cb0; margin-bottom: 0.5rem;">🏗️ 系統架構</h4>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                                <div style="background: #667eea; color: white; padding: 1rem; border-radius: 8px; text-align: center;">
+                                    <div style="font-size: 1.2rem; margin-bottom: 0.5rem;">☁️</div>
+                                    <div style="font-weight: bold;">Google Cloud Platform</div>
+                                    <div style="font-size: 0.9rem;">雲端運算平台</div>
+                                </div>
+                                <div style="background: #4ecdc4; color: white; padding: 1rem; border-radius: 8px; text-align: center;">
+                                    <div style="font-size: 1.2rem; margin-bottom: 0.5rem;">🐍</div>
+                                    <div style="font-weight: bold;">Python Runtime</div>
+                                    <div style="font-size: 0.9rem;">執行環境</div>
+                                </div>
+                                <div style="background: #feca57; color: white; padding: 1rem; border-radius: 8px; text-align: center;">
+                                    <div style="font-size: 1.2rem; margin-bottom: 0.5rem;">🔄</div>
+                                    <div style="font-weight: bold;">自動化調度</div>
+                                    <div style="font-size: 0.9rem;">24/7 運行</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="background: #2d3748; color: #e2e8f0; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; font-family: 'Courier New', monospace; font-size: 0.9rem;">
+<pre># 雲端部署配置文件
+runtime: python39
+env: standard
+
+automatic_scaling:
+  min_instances: 1
+  max_instances: 10
+  target_cpu_utilization: 0.6
+
+resources:
+  cpu: 1
+  memory_gb: 2
+  disk_size_gb: 10
+
+env_variables:
+  WORLDQUANT_EMAIL: "encrypted_email"
+  WORLDQUANT_PASSWORD: "encrypted_password"
+  SEARCH_ITERATIONS: "1000"
+</pre>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                            <div style="background: #d4edda; padding: 1rem; border-radius: 8px;">
+                                <strong style="color: #155724;">✅ 成功實現</strong><br>
+                                <ul style="margin: 0.5rem 0; padding-left: 1.5rem; color: #155724;">
+                                    <li>24小時不間斷運行</li>
+                                    <li>自動錯誤重試機制</li>
+                                    <li>結果即時保存</li>
+                                    <li>資源使用最佳化</li>
+                                </ul>
+                            </div>
+                            <div style="background: #f8d7da; padding: 1rem; border-radius: 8px;">
+                                <strong style="color: #721c24;">⚠️ 遇到挑戰</strong><br>
+                                <ul style="margin: 0.5rem 0; padding-left: 1.5rem; color: #721c24;">
+                                    <li>API 請求頻率限制</li>
+                                    <li>雲端費用控制</li>
+                                    <li>網路穩定性問題</li>
+                                    <li>除錯困難度增加</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div style="background: #fff3cd; padding: 1rem; border-radius: 8px; border: 1px solid #ffeaa7;">
+                            <strong style="color: #856404;">📈 目前狀態</strong><br>
+                            <p style="margin: 0.5rem 0; color: #856404;">
+                                正在優化請求頻率控制演算法，目標是在保持高效搜索的同時避免觸發API保護機制。
+                                預計下個版本將加入智能休眠和分散式請求功能。
+                            </p>
+                        </div>
+                    `;
+                    break;
+            }
+            
+            modalBody.innerHTML = content;
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Initialize animations
+        fadeInOnScroll();
+    </script>
+</body>
+</html>
